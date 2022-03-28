@@ -26,26 +26,11 @@ const TopRated = () => {
                         <div className="card">
                             <h2>{moviestoprated.title}</h2>
                             <img src={`${baseImgUrl}/${size}${moviestoprated.poster_path}`} />
-
                         </div>
-
-
-
-
                     </Link>
-
-
-
-                )
-
-
-                )}
-
-
+                ))}
             </div>
-
         </div>
-
     )
 }
 
