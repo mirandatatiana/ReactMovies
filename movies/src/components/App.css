@@ -1,0 +1,24 @@
+.App {
+  display: flex;
+  border: 1px solid green;
+}
+
+.movie-list {
+  border: 1px solid red;
+
+  justify-content: space-between;
+}
+
+.items-movies {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  justify-content: space-between;
+  border: 1px solid purple;
+}
+
+.movies-img {
+  width: 50px;
+
+  border-radius: 100%;
+}
