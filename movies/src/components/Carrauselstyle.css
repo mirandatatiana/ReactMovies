@@ -1,0 +1,28 @@
+.carouseldiv {
+  background: black;
+  border-radius: 60px;
+}
+.container {
+  margin: 30px;
+  border-radius: 60px;
+  height: 700px;
+  justify-content: space-between;
+}
+
+.img {
+  background-color: #cccccc;
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 60px;
+}
+.slick-arrow {
+  background-color: darkslategrey;
+  color: black;
+}
+
+.slick-arrow:hover {
+  color: black;
+  background-color: black;
+}

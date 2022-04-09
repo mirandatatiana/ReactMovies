@@ -1,13 +1,14 @@
 .App {
   display: flex;
   border: 1px solid green;
+  justify-content: space-around;
 }
 
-.movie-list {
+/* .movie-list {
   border: 1px solid red;
 
   justify-content: space-between;
-}
+} */
 
 .items-movies {
   display: flex;
@@ -17,8 +18,8 @@
   border: 1px solid purple;
 }
 
-.movies-img {
+/* .movies-img {
   width: 50px;
 
   border-radius: 100%;
-}
+} */

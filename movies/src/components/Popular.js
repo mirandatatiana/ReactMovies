@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import CardsMovies from "./CardsMovies"
 import "./App.css"
+import { Paper } from "@mui/material"
+
 
 const Popular = () => {
 
@@ -13,12 +15,14 @@ const Popular = () => {
     }, [])
 
     return (
-        <CardsMovies
-            title="Popular Movis"
-            movies={movies} />
+        <div className="App">
+            <Paper className="paper" style={{ maxHeight: 300, overflow: 'auto' }}>
+                <CardsMovies
+                    title="Popular Movis"
+                    movies={movies} />
+            </Paper>
 
-
-
+        </div>
 
     )
 }

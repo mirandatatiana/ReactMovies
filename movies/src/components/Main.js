@@ -3,6 +3,9 @@ import ListMovies from "./ListMovies";
 // import { useDemoData } from '@mui/x-data-grid-generator';
 import { Paper } from "@mui/material";
 import { List } from "@mui/material";
+import NavBar from "./NavBar";
+import Carrousel from "./Carrusel";
+import "./Carrauselstyle.css"
 // const { data } = useDemoData({
 
 //     rowLength: 20,
@@ -15,9 +18,15 @@ const Main = () => {
 
 
         <div>
+            <div className="navbar">
+                <NavBar />
+            </div>
+            <div className="carouseldiv">
+                <Carrousel />
+            </div>
             <div className="App">
 
-                <h2> Popular </h2>
+
                 <Paper className="paper" style={{ maxHeight: 300, overflow: 'auto' }}>
 
                     <ListMovies title="Popular Movies" url="popular" />
