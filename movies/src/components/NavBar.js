@@ -7,10 +7,23 @@ import MovieIcon from '@mui/icons-material/Movie';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField'
+import SearchMovies from "./SearchMovies";
+import { useNavigate } from "react-router-dom";
 
 
 const NavBar = () => {
 
+    const navigate = useNavigate();
+    const [valueInput, setValueInput] = useState("")
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(valueInput)
+        navigate(`/search-redic/${valueInput}`)
+    }
+
+    const handleChange = (e) => {
+        setValueInput(e.target.value)
+    }
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -31,12 +44,14 @@ const NavBar = () => {
                         <Button variant="contained"
 
                             size="large" >Populares</Button>
+                        <div>
+                            <form onSubmit={handleSubmit}>
+                                <input type="text" onChange={handleChange}>
+                                </input>
+                            </form>
 
-                        <TextField
-                            fullWidth label="Buscar Pelicula"
-                            id="fullWidth"
+                        </div>
 
-                        />
 
                     </Stack>
                 </Toolbar>
