@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
-import CardsMovies from "./CardsMovies"
+import ListMovies from "./ListMovies"
 import { Paper } from "@mui/material"
 import "./App.css"
+import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button, Link } from "@mui/material"
+import NavBar from "./NavBar"
 
 
 const TopRated = () => {
@@ -15,13 +17,48 @@ const TopRated = () => {
     }, [])
 
     return (
-        <div className="App">
-            <Paper className="paper" style={{ maxHeight: 300, overflow: 'auto' }}>
-                <CardsMovies
-                    title="Top Rated"
-                    movies={movies} />
-            </Paper>
+        <div>
+            <NavBar />
+            <div className="popular">
+                {movies.map(movie => (
+                    <Card
+                        sx={{
+                            maxWidth: 500,
+                            backgroundColor: "#5c6bc0",
+                            margin: 2,
+                            borderRadius: 5
+                        }}>
+                        <CardActionArea
+                            sx={{
+                                backgroundColor: "#5c6bc0"
+                            }}>
+                            <CardMedia
+                                component="img"
+                                height="700"
+                                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                                alt="green iguana"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {movie.title}
+                                </Typography>
 
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions >
+                            <Button size="small" color="error">
+
+                                <Link
+                                    sx={{
+                                        textDecoration: "none",
+                                        color: "#fafafa"
+                                    }}
+                                    href={`/${movie.id}`}>Entrar</Link>
+                            </Button>
+                        </CardActions>
+                    </Card>
+                ))}
+            </div>
         </div>
     )
 }

@@ -2,12 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 import "./searchstyle.css"
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
-import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
+import CardItem from "./CardItems";
+import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button, Link } from "@mui/material"
 
 
 const SearchMovies = () => {
@@ -22,48 +18,51 @@ const SearchMovies = () => {
             .then(data => setMovies(data.results))
 
     }, [])
-    //             setMovies(data))
-    // }, [params.movie])
-
-    // useEffect(() => {
-    //     fetch(`https://api.themoviedb.org/3/search/movie/?api_key=41514cf9c5004dbe47144dbf1928e39c`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setMovies(data.results)
-    //         })
-    // }, [searchParams])
-
-
-
-
 
     return (
-        <div className="search">
+        <div>
+            <NavBar />
+            <div className="popular">
+                {movies.map(movie => (
+                    <Card
+                        sx={{
+                            maxWidth: 500,
+                            backgroundColor: "#5c6bc0",
+                            margin: 2,
+                            borderRadius: 5
+                        }}>
+                        <CardActionArea
+                            sx={{
+                                backgroundColor: "#5c6bc0"
+                            }}>
+                            <CardMedia
+                                component="img"
+                                height="700"
+                                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                                alt="green iguana"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {movie.title}
+                                </Typography>
 
-            <ImageList >
-                {movies.map((movie) => (
-                    <ImageListItem sx={{ width: 300, margin: 1 }}>
-                        <img
-                            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                            loading="lazy"
-                        />
-                        <ImageListItemBar
-                            title={movie.title}
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions >
+                            <Button size="small" color="error">
 
-                            actionIcon={
-                                <IconButton
-                                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                                    aria-label={`info about ${movie.title}`}
-                                >
-                                    <InfoIcon />
-                                </IconButton>
-                            }
-                        />
-                    </ImageListItem>
+                                <Link
+                                    sx={{
+                                        textDecoration: "none",
+                                        color: "#fafafa"
+                                    }}
+                                    href={`/${movie.id}`}>Entrar</Link>
+                            </Button>
+                        </CardActions>
+                    </Card>
                 ))}
-            </ImageList>
+            </div>
         </div>
-
     )
 
 
@@ -71,30 +70,3 @@ const SearchMovies = () => {
 export default SearchMovies
 
 
-// export default function TitlebarImageList() {
-//   return (
-//     <ImageList sx={{ width: 500, height: 450 }}>
-//
-//       {movies.map((movie) => (
-//         <ImageListItem>
-//           <img
-//             src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-//             loading="lazy"
-//           />
-//           <ImageListItemBar
-//             title={movie.title}
-//            
-//             actionIcon={
-//               <IconButton
-//                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-//                 aria-label={`info about ${item.title}`}
-//               >
-//                 <InfoIcon />
-//               </IconButton>
-//             }
-//           />
-//         </ImageListItem>
-//       ))}
-//     </ImageList>
-//   );
-// }

@@ -1,25 +1,14 @@
 .App {
   display: flex;
-  border: 1px solid green;
   justify-content: space-around;
+  background-color: #37474f;
+}
+.carouseldiv {
+  background-color: #37474f;
 }
 
-/* .movie-list {
-  border: 1px solid red;
-
-  justify-content: space-between;
-} */
-
-.items-movies {
+.popular {
   display: flex;
   flex-wrap: wrap;
-  margin: 5px;
   justify-content: space-between;
-  border: 1px solid purple;
 }
-
-/* .movies-img {
-  width: 50px;
-
-  border-radius: 100%;
-} */

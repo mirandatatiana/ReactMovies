@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "./Carrauselstyle.css"
 import { useState, useEffect } from "react"
-import { CardMedia } from "@mui/material";
+import { CardMedia, ImageList, ImageListItem } from "@mui/material";
 
 
 const Carrousel = () => {
@@ -17,28 +17,24 @@ const Carrousel = () => {
         <div className="container" >
 
             <Slider
-
                 dots={true}
                 arrows={true}
-
-                speed={500}
                 slidesToShow={1}
-                adaptiveHeight={true}
+                // adaptiveHeight={true}
                 initialSlide={0}
-
-
+                autoplay={true}
+                autoplaySpeed={2000}
             >
 
                 {movies.map((movie) => (
 
-
-
-                    <img className="img" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
+                    <img className="img-carrusel" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
 
                 ))}
 
 
             </Slider>
+
         </div >
     )
 }

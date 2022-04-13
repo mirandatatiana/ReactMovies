@@ -6,10 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import MovieIcon from '@mui/icons-material/Movie';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField'
-import SearchMovies from "./SearchMovies";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, Link } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -28,22 +25,51 @@ const NavBar = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar sx={{ p: 1 }}>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
-                        <MovieIcon />
-                    </IconButton>
+
                     <Stack direction="row" spacing={8} >
-                        <Button variant="contained"
+                        <Button
+                            onClick={() => {
+                                alert('clicked');
+                            }}
+                        >
+                            Click me
+                        </Button>
+                        <Link to="/">
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{ mr: 2 }}
+                            >
+                            </IconButton>
+                            <MovieIcon />
+                        </Link>
+                        <Link to="/toprated">
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{ mr: 2 }}
+                            >
 
-                            size="large" >Ultimos Lanzamientos</Button>
-                        <Button variant="contained"
+                            </IconButton>
+                            <MovieIcon />
+                        </Link>
+                        <Link to="/popular">
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{ mr: 2 }}
+                            >
 
-                            size="large" >Populares</Button>
+                            </IconButton>
+                            <MovieIcon />
+                        </Link>
+
                         <div>
                             <form onSubmit={handleSubmit}>
                                 <input type="text" onChange={handleChange}>

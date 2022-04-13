@@ -1,16 +1,9 @@
 import ListMovies from "./ListMovies";
-// import { DataGrid } from '@mui/x-data-grid';
-// import { useDemoData } from '@mui/x-data-grid-generator';
 import { Paper } from "@mui/material";
-import { List } from "@mui/material";
 import NavBar from "./NavBar";
 import Carrousel from "./Carrusel";
 import "./Carrauselstyle.css"
-// const { data } = useDemoData({
 
-//     rowLength: 20,
-//     maxColumns: 5,
-// });
 
 const Main = () => {
 
@@ -25,14 +18,10 @@ const Main = () => {
                 <Carrousel />
             </div>
             <div className="App">
-
-
-                <Paper className="paper" style={{ maxHeight: 300, overflow: 'auto' }}>
-
+                <Paper elevation={3} className="paper" sx={{ maxHeight: 500, overflow: 'auto', margin: 10, borderRadius: 5 }}>
                     <ListMovies title="Popular Movies" url="popular" />
                 </Paper>
-                <Paper className="paper" style={{ maxHeight: 300, overflow: 'auto' }}>
-
+                <Paper elevation={3} className="paper" sx={{ maxHeight: 500, overflow: 'auto', margin: 10, borderRadius: 5 }}>
                     <ListMovies title="Top Rated" url="top_rated" />
                 </Paper>
 
