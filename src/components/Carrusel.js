@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 const Carrousel = () => {
     const [movies, setMovies] = useState([])
     useEffect(() => {
-        fetch("https://api.themoviedb.org/3/movie/now_playing/?api_key=41514cf9c5004dbe47144dbf1928e39c")
+        fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=41514cf9c5004dbe47144dbf1928e39c")
             .then(res => res.json())
             .then(data => setMovies(data.results))
     }, [])

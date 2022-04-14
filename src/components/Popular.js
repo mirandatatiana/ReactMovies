@@ -17,7 +17,7 @@ const Popular = () => {
 
     //Fetch for Popular
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular/?api_key=41514cf9c5004dbe47144dbf1928e39c&page=${page}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=41514cf9c5004dbe47144dbf1928e39c&page=${page}`)
             .then(res => res.json())
             .then(data => {
                 setMovies(data.results)
