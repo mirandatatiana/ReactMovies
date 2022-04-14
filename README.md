@@ -10,5 +10,7 @@ REACT, MATERIAL, AND SLICK LIBRARY
 API THE MOVIE DATABASE 
 
 This page was realized with an API and ENDPOINTS.
-In this page will be posible to finds, the most rated movie, top movies and the last ones. And we can search a name for any movi of the API.
+In this page will be posible to finds, the most rated movie, top movies and the last ones. And we can search a name for any movie of the API.
 You can be see a about the movie you are interest
+This page is made with love and passion. 
+The first time in my adult life who I finish a studie ENJOY!
