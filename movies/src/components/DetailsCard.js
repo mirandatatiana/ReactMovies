@@ -4,17 +4,19 @@ import { Card, CardActionArea, CardMedia, Typography, CardContent } from "@mui/m
 import "./App.css"
 import NavBar from "./NavBar"
 
-// Fetch of Details Cards
+// Function of Details Cards
 const DetailsCard = () => {
 
     const params = useParams()
     const [movies, setMovies] = useState([])
 
+    //Fetch of Details Cards
     useEffect((id_movie) => {
         fetch(`https://api.themoviedb.org/3/movie/${params.idMovie}?api_key=41514cf9c5004dbe47144dbf1928e39c`)
             .then(res => res.json())
             .then(data => setMovies(data))
     }, [params.idMovie])
+
     //Details Card
     return (
         <div>

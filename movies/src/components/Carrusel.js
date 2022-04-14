@@ -21,18 +21,12 @@ const Carrousel = () => {
                 autoplay={true}
                 autoplaySpeed={2000}
             >
-
                 {movies.map((movie) => (
-
                     <img key={movie.id}
                         className="img-carrusel"
                         src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
-
                 ))}
-
-
             </Slider>
-
         </div >
     )
 }

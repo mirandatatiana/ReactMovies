@@ -4,6 +4,8 @@ import "./App.css"
 import { Pagination } from "@mui/material"
 import NavBar from "./NavBar"
 
+
+//Function fot Top Rated
 const TopRated = () => {
     const [movies, setMovies] = useState([])
     const [totalPages, setTotalPages] = useState(1)
@@ -17,18 +19,14 @@ const TopRated = () => {
             .then(data => {
                 setMovies(data.results)
                 setTotalPages(data.total_pages)
-
             })
-
     }, [page])
 
     return (
         <div>
             <NavBar />
             <div className="popular">
-
                 {movies.map(movie => (
-
                     <CardItem key={movie.id}
                         title={movie.title}
                         img={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
@@ -39,7 +37,6 @@ const TopRated = () => {
                 count={totalPages > 500 ? 500 : totalPages}
                 page={page}
                 onChange={handleChange}
-
             />
         </div>
     )

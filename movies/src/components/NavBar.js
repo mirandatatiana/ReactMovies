@@ -6,11 +6,9 @@ import IconButton from '@mui/material/IconButton';
 import MovieIcon from '@mui/icons-material/Movie';
 import HomeIcon from '@mui/icons-material/Home';
 import AirlineStopsIcon from '@mui/icons-material/AirlineStops';
-import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useNavigate, Link } from "react-router-dom";
 import "./App.css"
-import FormControl from '@mui/material/FormControl';
 const NavBar = () => {
 
     const navigate = useNavigate();
