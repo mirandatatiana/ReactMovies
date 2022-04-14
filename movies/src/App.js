@@ -14,7 +14,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
 
-          <Route path="*" element={<Main />} />
+          <Route path="/*" element={<Main />} />
           <Route path="/toprated" element={<TopRated />} />
           <Route path="/popular" element={<Popular />} />
           <Route path="/search-redic/:movie" element={<SearchMovies />} />
