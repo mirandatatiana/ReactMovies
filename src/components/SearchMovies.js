@@ -23,7 +23,7 @@ const SearchMovies = () => {
                 setTotalPages(data.total_pages)
             })
 
-    }, [page])
+    }, [page, params.movie])
 
     return (
         <div>

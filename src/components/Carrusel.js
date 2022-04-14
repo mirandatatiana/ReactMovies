@@ -23,6 +23,7 @@ const Carrousel = () => {
             >
                 {movies.map((movie) => (
                     <img key={movie.id}
+                        alt={movie.title}
                         className="img-carrusel"
                         src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
                 ))}

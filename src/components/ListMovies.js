@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import CardItem from "./CardItems"
 
-const ListMovies = ({ title, url }) => {
+const ListMovies = ({ url }) => {
 
     const [movies, setMovies] = useState([])
 
@@ -11,7 +11,7 @@ const ListMovies = ({ title, url }) => {
             .then(res => res.json())
             .then(data => setMovies(data.results))
 
-    }, [])
+    }, [url])
     return (
         <div className="movie-list">
 
