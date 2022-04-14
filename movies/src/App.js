@@ -1,7 +1,5 @@
-import { useState } from 'react';
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import NavBar from "./components/NavBar"
-import Button from '@mui/material/Button';
 import TopRated from "./components/TopRated";
 import Popular from "./components/Popular";
 import Main from 'components/Main';

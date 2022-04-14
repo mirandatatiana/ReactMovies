@@ -4,7 +4,7 @@ const CardsMovies = ({ title, movies }) => {
         <div>
             <h2>{title}</h2>
             {movies.map(movie =>
-                <CardItem
+                <CardItem key={movie.id}
                     title={movie.title}
                     img={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                     link={`/${movie.id}`}

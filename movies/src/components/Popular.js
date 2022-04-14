@@ -1,22 +1,33 @@
 import { useState, useEffect } from "react"
 import CardsMovies from "./CardsMovies"
 import "./App.css"
-import { Paper } from "@mui/material"
+
 import ListMovies from "./ListMovies"
 import CardItem from "./CardItems"
-import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button, Link } from "@mui/material"
+import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button, Link, Pagination } from "@mui/material"
 import NavBar from "./NavBar"
+import Pages from "./Pages"
 
 
 const Popular = () => {
 
-    const [movies, setMovies] = useState([])
-    useEffect(() => {
-        fetch("https://api.themoviedb.org/3/movie/popular/?api_key=41514cf9c5004dbe47144dbf1928e39c")
-            .then(res => res.json())
-            .then(data => setMovies(data.results))
+    const [page, setPage] = useState(1);
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
 
-    }, [])
+
+    const [movies, setMovies] = useState([])
+    const [totalPages, setTotalPages] = useState(1)
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/movie/popular/?api_key=41514cf9c5004dbe47144dbf1928e39c&page=${page}`)
+            .then(res => res.json())
+            .then(data => {
+                setMovies(data.results)
+                setTotalPages(data.total_pages)
+            })
+
+    }, [page])
 
     return (
         <div>
@@ -24,7 +35,7 @@ const Popular = () => {
             <div className="popular">
 
                 {movies.map(movie => (
-                    <Card
+                    <Card key={movie.id}
                         sx={{
                             maxWidth: 500,
                             backgroundColor: "#5c6bc0",
@@ -39,7 +50,7 @@ const Popular = () => {
                                 component="img"
                                 height="700"
                                 src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                                alt="green iguana"
+                                alt={movie.title}
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
@@ -62,7 +73,15 @@ const Popular = () => {
                     </Card>
                 ))}
             </div>
+            <Pagination
+                count={totalPages > 500 ? 500 : totalPages}
+                page={page}
+                onChange={handleChange}
+
+            />
         </div>
+
+
         // <ListMovies title="Popular Movies" url="popular" />
 
 
